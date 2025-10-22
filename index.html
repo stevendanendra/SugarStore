@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sugar Store — Akun Genshin Aman & Cepat</title>
+    <meta name="description" content="Sugar Store — Reseller Akun Genshin terpercaya. Jasa rekber, convert antar e-wallet & bank. Transaksi cepat & aman." />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel-stylesheet">
+    <!-- Font Awesome CDN for professional icons (BARU) --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root{
+            --bg:#0f1724;
+            --card:#0b1220;
+            --accent1:#7c5cff; /* Purple */
+            --accent2:#ff8fb1; /* Pink */
+            --buy-color:#20c997; /* Green for Buy/Chat (Admin 1) */
+            --sell-color:#f5b24e; /* Orange for Sell (Admin 2) */
+            --muted:rgba(255,255,255,0.75);
+            --glass:rgba(255,255,255,0.04);
+            --radius:14px;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0;
+            font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+            /* Nuansa Genshin Impact: Dark Blue/Purple Gradient */
+            background:linear-gradient(180deg,#071028 0%, #071428 45%, #051426 100%);
+            color:#fff;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.45;
+        }
+        .container{max-width:1100px;margin:0 auto;padding:0 28px}
+        
+        /* Utility */
+        .text-center{text-align:center;}
+        .muted{color:var(--muted);font-size:14px}
+        .icon{margin-right:8px;font-size:1.1em;}
+
+        /* NAV */
+        .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+        .logo{display:flex;align-items:center;gap:12px}
+        /* Style .mark dipertahankan sebagai container size 48x48 */
+        .logo .mark{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#071428;font-size:18px; overflow: hidden;}
+        .logo h1{font-size:18px;margin:0}
+        .nav .links{display:flex;gap:12px;align-items:center}
+        
+        /* Buttons */
+        .btn{background:var(--accent1);padding:10px 14px;border-radius:10px;color:#071428;font-weight:700;text-decoration:none;transition:background 0.3s;}
+        .btn:hover{background:var(--accent2);}
+        .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;text-decoration:none;color:#fff;transition:background 0.3s;}
+        .ghost:hover{background:rgba(255,255,255,0.08);}
+
+        /* HERO */
+        .hero{
+            display:grid;
+            grid-template-columns:1fr 350px; /* Diubah dari 420px menjadi 350px untuk mengisi ruang */
+            gap:28px;
+            align-items:stretch; /* Menggunakan stretch untuk membuat kolom sama tinggi */
+            padding:70px 0; /* Padding vertikal sedikit ditingkatkan */
+        }
+        .hero .left h2{
+            font-size:38px; /* Sedikit dikurangi agar lebih proporsional */
+            margin:0 0 16px; 
+            font-weight:800;
+            line-height:1.2;
+        }
+        .tag{display:inline-block;background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:6px 12px;border-radius:999px;color:#071428;font-weight:700;font-size:13px;margin-bottom:12px;}
+        .lead{color:var(--muted);margin-bottom:30px; /* Margin diperlebar */}
+        .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+        
+        /* FULL WIDTH PROCESS SECTION (DIUBAH MENJADI 2 KOLOM GRID) */
+        .hero-process {
+            grid-column: 1 / -1; 
+            display: grid; /* BARU: Diubah menjadi Grid */
+            grid-template-columns: 1fr 1fr; /* BARU: Dua kolom sama besar */
+            gap: 30px; /* BARU: Jarak antara kolom */
+
+            background: rgba(11, 18, 32, 0.7); 
+            padding: 28px; 
+            margin-top: 40px; 
+            border-radius: var(--radius);
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Gaya kolom kiri (Jual) - menambahkan pemisah vertikal */
+        .process-column-left {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding-right: 30px; /* Jarak agar tidak terlalu dekat dengan pemisah */
+        }
+        /* Gaya kolom kanan (Beli) */
+        .process-column-right {
+            padding-left: 0; /* Jarak kiri sudah dihandle oleh gap grid */
+        }
+
+        .hero-process h4 {
+            font-size: 18px; 
+            margin: 0 0 14px; 
+            font-weight: 800; 
+            color: var(--accent1); 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+            padding-bottom: 8px;
+        }
+        
+        /* DETAIL STYLING UNTUK ALUR PROSES */
+        .process-steps{
+            display:flex; 
+            flex-direction:column; 
+            gap:10px; 
+        }
+        .process-steps .step{
+            display:flex; 
+            gap:10px; 
+            align-items:flex-start;
+        }
+        .process-steps .step strong{
+            font-weight:700; 
+            color: #fff;
+        }
+        .process-steps .step-final{
+            padding-top: 10px; 
+            border-top: 1px dashed rgba(255,255,255,0.1);
+        }
+        
+        /* UPDATED CTA CLASS: Membuat semua tombol membagi ruang secara merata (flex-grow: 1) */
+        .cta{
+            display:flex; 
+            align-items:center;
+            gap:10px;
+            padding:14px 18px; 
+            border-radius:12px;
+            font-weight:700;
+            text-decoration:none;
+            transition:transform 0.2s;
+            flex-grow: 1; 
+            justify-content: center; 
+        }
+        .cta:hover{transform:translateY(-2px);}
+
+        /* CTA Colors (POINT 3) */
+        .cta.wa-buy{background:linear-gradient(90deg,var(--buy-color),#12b886);color:#04121a;box-shadow:0 4px 15px rgba(32, 201, 151, 0.4);}
+        .cta.wa-sell{background:linear-gradient(90deg,var(--sell-color),#d69e38);color:#071428;box-shadow:0 4px 15px rgba(245, 178, 78, 0.4);}
+        .cta.ig{background:linear-gradient(90deg,#f77737,#e4405f);color:#071428;}
+        
+        /* NEW: WhatsApp Group CTA Style */
+        .cta.wa-group {
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            color: #071428;
+            margin-top: 12px; /* Jarak dari CTA di atasnya */
+            width: 100%;
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(124, 92, 255, 0.4);
+        }
+
+
+        /* right card */
+        .hero-card{
+            background:var(--card); 
+            padding:28px 24px; /* Padding atas/bawah disesuaikan untuk keseimbangan */
+            border-radius:16px;
+            box-shadow:0 8px 30px rgba(0,0,0,0.4);
+            border:1px solid rgba(255,255,255,0.05);
+            /* Tambahkan sedikit margin top pada mobile untuk memisahkan dari konten atas */
+            margin-top: 0; 
+            height: 100%; /* Penting untuk memastikan card mengisi ruang yang di-stretch oleh Grid */
+            display: flex; /* Tambahkan flex untuk mengatur tata letak internal secara vertikal */
+            flex-direction: column; /* Konten diatur secara kolom */
+        }
+        .hero-card h3{margin:0 0 16px;font-size:20px;} /* Margin bawah header ditingkatkan */
+        .service-list{display:flex;flex-direction:column;gap:20px; margin-bottom: auto;} /* DIUBAH: Gap ditingkatkan lagi, margin-bottom auto agar mengisi ruang */
+        
+        /* REVISED SERVICE CARD STYLING */
+        .service{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            padding:16px 12px; /* DIUBAH: Padding vertikal ditingkatkan */
+            background:var(--glass);
+            border-radius:10px;
+            border-left:3px solid var(--accent1);
+            cursor: default;
+            transition: all 0.2s ease;
+        }
+        .service:hover {
+            background: rgba(255,255,255,0.08); 
+            border-left-color: var(--accent2); 
+            transform: translateX(4px); 
+            box-shadow: 0 0 10px rgba(124, 92, 255, 0.2); 
+        }
+        
+        .service strong{
+            font-weight:800; 
+            display:flex;
+            align-items:center;
+            gap: 4px; 
+        }
+
+        /* MANUAL CONTACT BOX STYLING (BARU) */
+        .manual-contact-box {
+            margin-top:24px; 
+            color:var(--muted); 
+            font-size:13px; 
+            line-height:1.5; 
+            padding: 18px; /* Padding ditingkatkan */
+            border-radius: 8px; 
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .manual-contact-row {
+            display: flex;
+            justify-content: center; /* Diubah: Konten rata tengah */
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .manual-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* sections */
+        section{padding:70px 0; /* Padding vertikal lebih besar */}
+        .section-title{font-size:28px;font-weight:800;margin-bottom:20px;text-align:center;}
+
+        /* SOCIAL PROOF (POINT 2) */
+        .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;background:var(--card);padding:25px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.05);}
+        .proof-item{text-align:center;padding:10px;}
+        .proof-item .stat{font-size:30px;font-weight:800;color:var(--accent2);line-height:1;}
+        .proof-item .label{font-size:14px;color:var(--muted);margin-top:4px;}
+        .proof-item .emoji{font-size:24px;margin-bottom:5px;display:block;}
+
+        /* Why Us */
+        .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:10px;}
+        .card{background:linear-gradient(180deg,var(--card),rgba(255,255,255,0.02));padding:20px;border-radius:16px;border:1px solid rgba(255,255,255,0.03);height:100%;}
+        .card h4{font-size:18px;font-weight:700;display:flex;align-items:center;gap:8px;}
+        
+        /* NEW: REKBER CARD STYLE */
+        .rekber-card{
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent); /* Soft internal gradient */
+            border: 1px solid var(--accent2); /* Keep border but make it thicker/more prominent */
+            box-shadow: 0 0 15px rgba(255, 143, 177, 0.3); /* Soft pink/accent glow */
+            transition: all 0.3s;
+            /* FIX BARU: Vertical Centering */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .rekber-card:hover {
+            box-shadow: 0 0 25px rgba(255, 143, 177, 0.5); /* Stronger glow on hover */
+            transform: translateY(-2px);
+        }
+
+        /* footer */
+        footer{padding:40px 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:60px;}
+        /* Styling untuk ikon di footer */
+        .footer-icon {
+            font-size: 1.2em;
+            width: 40px; /* Ukuran tetap */
+            height: 40px; /* Ukuran tetap */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* responsive */
+        @media (max-width:1000px){
+            .hero{grid-template-columns:1fr;}
+            .hero-card{order:2;margin-top:30px;} /* Margin ditingkatkan di mobile */
+            .hero-process {
+                margin-top: 30px;
+                grid-column: auto;
+                grid-template-columns: 1fr; /* Diubah menjadi 1 kolom di mobile */
+                gap: 20px;
+            }
+            .process-column-left {
+                border-right: none; /* Hapus border vertikal */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Tambahkan border horizontal */
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+            .process-column-right {
+                padding-left: 0;
+                padding-top: 20px;
+            }
+        }
+        @media (max-width:900px){
+            .proof-grid{grid-template-columns:repeat(2,1fr);}
+            .grid-3{grid-template-columns:repeat(2,1fr);}
+        }
+        @media (max-width:580px){
+            .nav .links{display:none}
+            /* Pada layar kecil, biarkan CTA wrap ke bawah */
+            .cta{flex-grow:0; width:100%;} 
+            .grid-3{grid-template-columns:1fr}
+            .hero .left h2{font-size:32px} 
+            .logo h1{font-size:16px}
+            .container{padding:0 18px;}
+            .proof-grid{grid-template-columns:1fr;}
+            .hero{padding:30px 0;}
+            section{padding:30px 0;}
+            .manual-contact-row {
+                flex-direction: column;
+                align-items: flex-start; /* Items start from left on mobile */
+            }
+        }
+
+        /* subtle animation */
+        .float{animation:float 6s ease-in-out infinite}
+        @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+        /* nice scroll */
+        html{scroll-behavior:smooth}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- NAVIGATION --><nav class="nav">
+            <div class="logo">
+                <!-- START LOGO BARU --><div class="mark" style="background: none;">
+                    <img 
+                        src="https://iili.io/KUnf3cg.webp" 
+                        alt="Sugar Store Logo" 
+                        onerror="this.onerror=null; this.src='https://placehold.co/48x48/0b1220/ff8fb1?text=SS';" 
+                        style="width:100%; height:100%; object-fit:cover; border-radius:10px;"
+                    >
+                </div>
+                <!-- END LOGO BARU --><div>
+                    <h1>Sugar Store</h1>
+                    <div class="muted" style="font-size:12px">Reseller Akun Genshin — Aman & Cepat</div>
+                </div>
+            </div>
+            <!-- LINK NAVIGATION DIUBAH SESUAI PERMINTAAN USER --><div class="links">
+                <a class="ghost" href="#top">Home</a> <!-- FIX: href diubah menjadi #top --><a class="ghost" href="#workflow">Alur Kerja</a>
+                <a class="ghost" href="#proof">Kepercayaan</a>
+                <a class="ghost" href="#services">Layanan</a>
+                <a class="ghost" href="#contact">Stok Akun</a>
+                <!-- TOMBOL 'HUBUNGI KAMI' DIHAPUS SESUAI PERMINTAAN --></div>
+        </nav>
+
+        <!-- HERO SECTION --><header class="hero" id="top"> <!-- FIX: id="top" ditambahkan untuk target scroll Home --><div class="left">
+                <!-- Wording fokus ke benefit pembeli (POINT 1) --><span class="tag">Reseller Akun Genshin Premium & Starter</span>
+                <h2>Akun Genshin Impianmu, Transaksi Aman, Cepat, dan Terpercaya.</h2>
+                <p class="lead">Sugar Store menyediakan akun premium dan starter siap pakai, serta layanan Rekber dan Convert antar E-wallet/Bank. **Untuk cek stok akun terbaru, silakan hubungi kontak kami di bawah ini.**</p>
+
+                <div class="cta-row">
+                    <!-- CTA Utama: Beli/Cek Stok (Green/Buy Color) (WA 1) --><a class="cta wa wa-buy" href="https://wa.me/6289666637166?text=Halo%20Sugar%20Store%2C%20saya%20mau%20cek%20stok%20akun%20Genshin%20terbaru%20saat%20ini." target="_blank">
+                        <span>⭐ Steven (Admin 1)</span>
+                    </a>
+                    
+                    <!-- CTA Sekunder: Jual/Tawarkan (Orange/Sell Color) (WA 2) --><a class="cta wa wa-sell" href="https://wa.me/62895385551919?text=Halo%20Sugar%20Store%2C%20saya%20mau%20jual%20akun%20Genshin%20saya.%20Mohon%20info%20prosedur%20jualnya." target="_blank">
+                        <span>💰 Evan (Admin 2)</span>
+                    </a>
+                    
+                    <!-- Instagram CTA --><a class="cta ig" href="https://instagram.com/genshin_sugar.store" target="_blank">
+                        <span>📸 SUGAR STORE (Instagram)</span>
+                    </a>
+                </div>
+
+                <!-- NEW: Tombol Grup WhatsApp Full Width (Mencolok) --><a class="cta wa-group" href="https://chat.whatsapp.com/Ji9HkyVXUN1Dqw2L6H6kQU" target="_blank">
+                    <i class="fab fa-whatsapp"></i> JOIN GRUP WHATSAPP RESMI
+                </a>
+
+                <!-- MANUAL CONTACT INFO (Menggunakan class baru) --><div class="manual-contact-box">
+                    <!-- JUDUL RATA TENGAH --><strong style="color:var(--accent2); display:block; margin-bottom: 6px; text-align: center;">Antisipasi Link Error: Hubungi Manual</strong>
+                    <div class="manual-contact-row">
+                        <!-- Konten rata tengah oleh .manual-contact-row --><div class="manual-contact-item">
+                            <i class="fab fa-whatsapp" style="color: var(--buy-color);"></i>
+                            Steven (Admin 1): <strong style="color:#fff;">0896-6663-7166</strong>
+                        </div>
+                        <div class="manual-contact-item">
+                            <i class="fab fa-whatsapp" style="color: var(--sell-color);"></i>
+                            Evan (Admin 2): <strong style="color:#fff;">0895-3855-51919</strong>
+                        </div>
+                        <div class="manual-contact-item">
+                            <i class="fab fa-instagram" style="color: var(--accent2);"></i>
+                            Instagram: <strong style="color:#fff;">@genshin_sugar.store</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <aside class="hero-card">
+                <h3>Layanan Utama Sugar Store</h3>
+                <div class="service-list">
+                    <!-- LAYANAN 1: Buy Accounts --><div class="service">
+                        <span style="display:flex; align-items:center;">
+                            <span class="icon" style="color:var(--accent2); font-size:1.4em;">🛒</span>
+                            <strong>Buy Accounts</strong> <span class="muted" style="margin-left: 6px;">&bull; Starter & Mid</span>
+                        </span>
+                    </div>
+                    
+                    <!-- LAYANAN 2: Stock & Resell --><div class="service">
+                        <span style="display:flex; align-items:center;">
+                            <span class="icon" style="color:var(--accent2); font-size:1.4em;">📦</span>
+                            <strong>Stock & Resell</strong> <span class="muted" style="margin-left: 6px;">&bull; Ready to Ship</span>
+                        </span>
+                    </div>
+                    
+                    <!-- LAYANAN 3: Rekber Aman --><div class="service">
+                        <span style="display:flex; align-items:center;">
+                            <span class="icon" style="color:var(--accent2); font-size:1.4em;">🛡️</span>
+                            <strong>Rekber Aman</strong> <span class="muted" style="margin-left: 6px;">&bull; Jasa Penengah Terpercaya (Ada biaya admin)</span>
+                        </span>
+                    </div>
+                    
+                    <!-- LAYANAN 4: Convert E-Wallet --><div class="service">
+                        <span style="display:flex; align-items:center;">
+                            <span class="icon" style="color:var(--accent2); font-size:1.4em;">🔄</span>
+                            <strong>Convert E-Wallet</strong> <span class="muted" style="margin-left: 6px;">&bull; BCA, DANA, ShopeePay, GoPay, OVO (Ada biaya admin)</span>
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- NEW: INFORMASI PEMBAYARAN (MEMENUHI RUANG KOSONG) --><div style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                    <strong style="color: var(--accent2);">Metode Pembayaran:</strong>
+                    <span class="muted" style="display: block; line-height: 1.5; font-size: 13px;">BCA, DANA, ShopeePay, GoPay, OVO, QRIS.</span>
+                </div>
+            </aside>
+            
+            <!-- NEW: ALUR JUAL & BELI AKUN (FULL WIDTH, 2 KOLOM) --><div class="hero-process" id="workflow">
+                
+                <!-- KOLOM KIRI: ALUR JUAL AKUN --><div class="process-column-left">
+                    <h4>
+                        Alur Jual Akun (5 Langkah Cepat)
+                    </h4>
+                    <div class="process-steps">
+                        <!-- STEP 1 --><div class="step">
+                            <span class="step-num" style="font-size:1.2em; font-weight:800; color:var(--accent2); line-height: 1.1;">1.</span>
+                            <div class="step-desc">
+                                <strong>Kirim Detail Akun</strong> 
+                                <span class="muted" style="margin-left: 4px; display: block; line-height: 1.2;">(Screenshot lengkap & data kepemilikan)</span>
+                            </div>
+                        </div>
+                        <!-- STEP 2 --><div class="step">
+                            <span class="step-num" style="font-size:1.2em; font-weight:800; color:var(--accent2); line-height: 1.1;">2.</span>
+                            <div class="step-desc">
+                                <strong>Sertakan Harga yang Dimau</strong> 
+                                <span class="muted" style="margin-left: 4px; display: block; line-height: 1.2;">(Ajukan harga terbaik untuk akun Anda)</span>
+                            </div>
+                        </div>
+                        <!-- STEP 3 --><div class="step">
+                            <span class="step-num" style="font-size:1.2em; font-weight:800; color:var(--accent2); line-height: 1.1;">3.</span>
+                            <div class="step-desc">
+                                <strong>Proses Negosiasi Harga</strong> 
+                                <span class="muted" style="margin-left: 4px; display: block; line-height: 1.2;">(Kami berikan penawaran harga final)</span>
+                            </div>
+                        </div>
+                        <!-- STEP 4 --><div class="step">
+                            <span class="step-num" style="font-size:1.2em; font-weight:800; color:var(--accent2); line-height: 1.1;">4.</span>
+                            <div class="step-desc">
+                                <strong>Proses Pengamanan Akun</strong> 
+                                <span class="muted" style="margin-left: 4px; display: block; line-height: 1.2;">(Kami amankan akun & data dari pembeli sebelumnya)</span>
+                            </div>
+                        </div>
+                        <!-- STEP 5: Final Step Highlighted --><div class="step step-final">
+                            <span style="font-size:1.2em; font-weight:800; color:var(--buy-color); line-height: 1.1;"><span class="icon" style="margin-right:0;">🚀</span></span>
+                            <div class="step-desc">
+                                <strong>Kami Cek dan Bayar Cepat</strong> 
+                                <span class="muted" style="margin-left: 4px; display: block; line-height: 1.2;">(Pembayaran dana cair dalam 5-15 menit)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- KOLOM KANAN: ALUR BELI AKUN (BARU) --><div class="process-column-right">
+                    <h4>
+                        Alur Beli Akun (5 Langkah Aman)
+                    </h4>
+                    <div class="process-steps">
+                        <!-- STEP 1: Chat dan informasikan akun mana yang mau dibeli --><div class="step">
+                            <span class="step-num" style="font-size:1.2em; font-weight:800; color:var(--accent2); line-height: 1.1;">1.</span>
+                            <div class="step-desc">
+                                <strong>Pilih Akun & Kontak Admin</strong> 
+                                <span class="muted" style="margin-left: 4px; display: block; line-height: 1.2;">(Chat Admin 1/2 dan sebutkan akun yang diminati)</span>
+                            </div>
+                        </div>
+                        <!-- STEP 2: Proses negosiasi harga --><div class="step">
+                            <span class="step-num" style="font-size:1.2em; font-weight:800; color:var(--accent2); line-height: 1.1;">2.</span>
+                            <div class="step-desc">
+                                <strong>Negosiasi Harga Terbaik</strong> 
+                                <span class="muted" style="margin-left: 4px; display: block; line-height: 1.2;">(Kami berikan detail akun & harga final)</span>
+                            </div>
+                        </div>
+                        <!-- STEP 3: Proses bayar --><div class="step">
+                            <span class="step-num" style="font-size:1.2em; font-weight:800; color:var(--accent2); line-height: 1.1;">3.</span>
+                            <div class="step-desc">
+                                <strong>Lakukan Pembayaran</strong> 
+                                <span class="muted" style="margin-left: 4px; display: block; line-height: 1.2;">(Transfer via BCA / E-Wallet / QRIS yang tersedia)</span>
+                            </div>
+                        </div>
+                        <!-- STEP 4: Proses pengamanan akun (di sisi kami) --><div class="step">
+                            <span class="step-num" style="font-size:1.2em; font-weight:800; color:var(--accent2); line-height: 1.1;">4.</span>
+                            <div class="step-desc">
+                                <strong>Verifikasi & Pengamanan Akun</strong> 
+                                <span class="muted" style="margin-left: 4px; display: block; line-height: 1.2;">(Admin verifikasi pembayaran dan siapkan data *bind* baru)</span>
+                            </div>
+                        </div>
+                        <!-- STEP 5: Proses verifikasi dari kami (penyerahan akun) --><div class="step step-final">
+                            <span style="font-size:1.2em; font-weight:800; color:var(--buy-color); line-height: 1.1;"><span class="icon" style="margin-right:0;">🔑</span></span>
+                            <div class="step-desc">
+                                <strong>Akun Diserahkan & Selesai</strong> 
+                                <span class="muted" style="margin-left: 4px; display: block; line-height: 1.2;">(Anda menerima akun dan melakukan *bind* data kepemilikan baru)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END ALUR JUAL & BELI AKUN --></header>
+
+        <!-- SOCIAL PROOF SECTION (POINT 2) --><section id="proof">
+            <h3 class="section-title">Kenapa Harus Sugar Store? <span class="muted" style="font-size:60%">— Bukti Kepercayaan</span></h3>
+            <div class="proof-grid">
+                <div class="proof-item card">
+                    <span class="emoji">✅</span>
+                    <div class="stat">500+</div>
+                    <div class="label">Transaksi Berhasil</div>
+                </div>
+                <div class="proof-item card">
+                    <span class="emoji">⏱️</span>
+                    <div class="stat">15 Min</div>
+                    <div class="label">Rata-rata Proses Bayar</div>
+                </div>
+                <div class="proof-item card">
+                    <span class="emoji">🔒</span>
+                    <div class="stat">100%</div>
+                    <div class="label">Garansi Keamanan Akun</div>
+                </div>
+                <div class="proof-item card">
+                    <span class="emoji">⭐️</span>
+                    <div class="stat">4.9/5</div>
+                    <div class="label">Rating Pelanggan</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- WHY US (Services Detail) --><section id="services">
+            <h3 class="section-title" style="margin-bottom:30px;">Layanan Detail Kami</h3>
+            <div class="grid-3">
+                <div class="card">
+                    <h4><span class="icon">💰</span>Bayar Cepat & Tepat</h4>
+                    <p class="muted">Pembayaran dilakukan secara instan setelah verifikasi kepemilikan akun selesai. Proses transparan, tidak ada potongan tersembunni.</p>
+                </div>
+                <div class="card">
+                    <h4><span class="icon">🛡️</span>Keamanan Mutlak</h4>
+                    <p class="muted">Hanya menerima akun dengan bukti kepemilikan yang valid. Jasa Rekber (Rekening Bersama) tersedia untuk garansi penuh transaksi jual-beli.</p>
+                </div>
+                <div class="card">
+                    <h4><span class="icon">🌐</span>Multi-Layanan Finansial</h4>
+                    <p class="muted">Selain beli & jual akun, kami melayani Convert & Transfer Saldo antar BCA, DANA, ShopeePay, GoPay, dan OVO dengan rate terbaik.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT (Bagian ini kini berfungsi sebagai destinasi utama untuk cek stok & transaksi) --><section id="contact" style="padding:40px 0;"> <!-- Padding vertikal disesuaikan agar lebih padat --><div style="display:flex;gap:30px;flex-wrap:wrap;align-items:center;padding:20px;background:var(--card);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.05);">
+                <div style="flex:1;min-width:260px">
+                    <h3 style="margin-top:0; font-size:24px;">Cek Stok Akun & Hubungi Kami!</h3> <!-- Font size dinaikkan --><p class="muted" style="margin-bottom:10px; text-align: justify;">Stok akun kami berubah setiap hari. Silakan hubungi salah satu kontak kami di bawah ini untuk mendapatkan **list akun Genshin terbaru** (Starter, Mid, Premium) dan detail harga.</p>
+
+                    <div class="cta-row" style="margin-top:10px;"> <!-- Margin top disesuaikan agar ada jarak antara teks & tombol --><!-- CTA Jual dan Beli dibedakan di sini juga --><a class="cta wa wa-buy" href="https://wa.me/6289666637166?text=Saya%20mau%20CEK%20STOK%20akun%20Genshin%20terbaru" target="_blank">Steven (Admin 1)</a>
+                        <a class="cta wa wa-sell" href="https://wa.me/62895385551919?text=Saya%20mau%20JUAL%20akun%20Genshin%20saya" target="_blank">Evan (Admin 2)</a>
+                        <a class="cta ig" href="https://instagram.com/genshin_sugar.store" target="_blank">SUGAR STORE (Instagram)</a>
+                    </div>
+                    
+                    <!-- NEW: Metode Pembayaran Dihapus dari Sini karena Pindah ke Hero Card --><!-- <div style="margin-top:18px" class="muted">
+                        <strong>Metode Pembayaran:</strong> BCA, DANA, ShopeePay, GoPay, OVO, QRIS.
+                    </div> -->
+                </div>
+
+                <div style="width:320px;min-width:220px;">
+                    <!-- Perubahan: Tambahkan kelas rekber-card dan hapus inline style border --><div class="card rekber-card">
+                        <h4><span class="icon">📢</span>Jasa Rekber & Convert</h4>
+                        <!-- FIX: Teks Justify --><p class="muted" style="text-align: justify;">Membutuhkan pihak ketiga aman untuk transaksi? Kami bantu konversi dana antar E-wallet dengan rate kompetitif. **(Ada biaya admin)** Hubungi kontak 24 Jam kami.</p>
+                        
+                        <!-- FIX: Tombol Full Width & Display Block --><a class="btn" href="https://wa.me/6289666637166?text=Saya%20minat%20jasa%20REKBER%20di%20Sugar%20Store" target="_blank" style="width:100%; text-align:center; display: block; margin-top:14px;">Gunakan Rekber Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER --><footer>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;row-gap:15px;">
+                <div class="muted">© 2023 Sugar Store — Reseller Akun Genshin Terpercaya.</div>
+                <!-- SOCIAL ICONS (DIPERBARUI DENGAN ICON FONT AWESOME) --><div style="display:flex;gap:12px;align-items:center">
+                    <!-- ICON WHATSAPP GROUP (UPDATED LINK) --><a class="ghost" href="https://chat.whatsapp.com/Ji9HkyVXUN1Dqw2L6H6kQU" target="_blank" style="color: var(--accent1); border-color: var(--accent1); padding:8px 12px;" title="WhatsApp Group">
+                        <i class="fas fa-users footer-icon"></i>
+                    </a>
+                    <!-- Icon WA 1 (Hijau) (UPDATED LINK) --><a class="ghost" href="https://wa.me/6289666637166" target="_blank" style="color: var(--buy-color); border-color: var(--buy-color); padding:8px 12px;" title="Steven (Admin 1)">
+                        <i class="fab fa-whatsapp footer-icon"></i>
+                    </a>
+                    <!-- Icon WA 2 (Oranye) (UPDATED LINK) --><a class="ghost" href="https://wa.me/62895385551919" target="_blank" style="color: var(--sell-color); border-color: var(--sell-color); padding:8px 12px;" title="Evan (Admin 2)">
+                        <i class="fab fa-whatsapp footer-icon"></i>
+                    </a>
+                    <a class="ghost" href="https://instagram.com/genshin_sugar.store" target="_blank" style="color: var(--accent2); border-color: var(--accent2); padding:8px 12px;" title="Instagram SUGAR STORE">
+                        <!-- Icon IG (Pink/Accent) --><i class="fab fa-instagram footer-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Logika sederhana untuk animasi/enhancement jika diperlukan di masa depan
+        (function(){
+            // Contoh: Membuat header sticky (jika diperlukan)
+            const nav = document.querySelector('.nav');
+            const container = document.querySelector('.container');
+            let navHeight = nav.offsetHeight; // Dapatkan tinggi awal
+
+            const updateNavStyles = () => {
+                // Mendapatkan lebar nav, harus dihitung dengan padding
+                const currentWidth = nav.closest('.container') ? nav.closest('.container').offsetWidth : window.innerWidth;
+                const containerPadding = 28 * 2; // Sesuai dengan padding container
+                
+                navHeight = nav.offsetHeight; // Update tinggi
+                if (window.scrollY > 50) {
+                    nav.style.backgroundColor = 'rgba(7, 16, 40, 0.95)';
+                    nav.style.position = 'fixed';
+                    nav.style.top = '0';
+                    // Menyesuaikan lebar fixed nav dengan container
+                    nav.style.width = (currentWidth - containerPadding) + 'px'; 
+                    nav.style.zIndex = '1000';
+                    nav.style.backdropFilter = 'blur(10px)';
+                    nav.style.padding = '12px 0'; // Padding 0 karena sudah ada di container
+                    nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.4)';
+                    // Tambahkan padding ke container agar konten tidak tertutup fixed nav
+                    container.style.paddingTop = (navHeight + 10) + 'px'; // +10px extra
+                } else {
+                    nav.style.backgroundColor = 'transparent';
+                    nav.style.position = 'static';
+                    nav.style.padding = '18px 0'; // Kembali ke padding normal
+                    nav.style.width = 'auto'; // Kembali ke lebar auto
+                    nav.style.boxShadow = 'none';
+                    nav.style.backdropFilter = 'none';
+                    container.style.paddingTop = '0';
+                }
+            };
+            
+            // Panggil update styles segera setelah load dan tambahkan listener
+            updateNavStyles();
+            window.addEventListener('scroll', updateNavStyles);
+            window.addEventListener('resize', updateNavStyles); // Handle resize
+
+             // Pastikan posisi scroll-to-section dipertimbangkan saat nav fixed
+             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    
+                    // FIX: Cek targetId untuk menghindari document.querySelector('#') yang tidak valid
+                    if (targetId === '#top' || targetId === '#') {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                        return;
+                    }
+
+                    // For other valid IDs
+                    if (targetId) {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            // Offset untuk mempertimbangkan fixed header
+                            const offset = 80; 
+                            window.scrollTo({
+                                top: targetElement.offsetTop - offset,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+        })();
+    </script>
+</body>
+</html>
